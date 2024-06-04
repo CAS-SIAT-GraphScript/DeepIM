@@ -6,7 +6,7 @@ Verify the performance impact on a single A100 GPU.
 
 ## Prepare Data
 
-Download the weibo_network.txt from <a href="https://www.baidu.com">here</a> and place it in the root path of the current project.
+Download the weibo_network.txt and place it in the root path of the current project.
 
 ## Getting Started
 
@@ -47,7 +47,7 @@ The above table is **jazz (seed rate = 20%)** result, the overall results are co
 
 The above table is **power_grid (seed rate = 20%)** result, the result are still consistent with the official result, so we conduct further experiments on weibo network. We sample two sub-graph by obtaining the first **N** nodes in original 178w+ weibo graph ourselves, **N** is 10000 and 50000 respectively.
 
-|                     | weibo (seed rate=20%) 1w node | weibo (seed rate=1%) 1w node | weibo (seed rate=1%) 5w node |
+|                     | weibo(seed rate=20%)<br>1w node | weibo(seed rate=1%)<br>1w node | weibo(seed rate=1%)<br>5w node |
 | :-----------------: | :---------------------------: | :--------------------------: | :--------------------------: |
 | LT diffusion model  |             56.1              |              /               |              /               |
 | IC diffusion model  |             37.25             |            14.91             |            36.24             |
