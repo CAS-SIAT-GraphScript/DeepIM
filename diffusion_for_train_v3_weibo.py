@@ -116,6 +116,8 @@ if __name__ == "__main__":
     seed_rate = [1, 5, 10, 20]
     parser.add_argument("-sp", "--seed_rate", default=1, type=int,
                         help="one of: {}".format(", ".join(str(sorted(seed_rate)))))
+    node_num = [1000, 10000, 30000, 50000]
+    parser.add_argument("-nn", "--node_num", default=10000, type=int, help="number of sample sub-graph node {}".format(", ".join(str(sorted(node_num)))))
     mode = ['Normal', 'Budget Constraint']
     parser.add_argument("-m", "--mode", default="normal", type=str,
                         help="one of: {}".format(", ".join(sorted(mode))))
@@ -126,7 +128,7 @@ if __name__ == "__main__":
     with open(f"{args.dataset}.sparse.pl", 'rb') as f:
         adj = pickle.load(f)
 
-    adj = get_top_nodes_and_edge(adj, 50000)
+    adj = get_top_nodes_and_edge(adj, args.node_num)
 
     inverse_pairs = np.zeros((100, adj.shape[0], 2))
     for i in trange(100, desc="Sampling"):

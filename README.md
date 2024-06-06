@@ -16,13 +16,13 @@ Run `load_to_sparse_array_fast.py`  to load `web_network.txt` and generate `weib
 
 ### Step 2
 
-Run `diffusion_for_train_weibo.py` to generate a sampled graph of Weibo. The default parameters will load `weibo.sparse.pl`.  
+Run `diffusion_for_train_v3_weibo.py` to generate a sampled graph of Weibo. The default parameters will load `weibo.sparse.pl`.  
 
-Line **110~118** code in `diffusion_for_train_weibo.py` define the dataset name, diffusion model, and seed rate of the trainable sub-graph. You can change these parameters to load different datasets using various diffusion models and seed rates. In the seed rate parameter, 1 represents 0.01, 5 represents 0.05, 10 represents 0.1, and 20 represents 0.2 relative to the entire graph node. The default parameters will use **weibo dataset, IC diffusion model and 0.01 seed rate** to build a trainable sub-graph.
+Line **110~118** code in `diffusion_for_train_v3_weibo.py` define the dataset name, diffusion model, and seed rate of the trainable sub-graph. You can change these parameters to load different datasets using various diffusion models and seed rates. In the seed rate parameter, 1 represents 0.01, 5 represents 0.05, 10 represents 0.1, and 20 represents 0.2 relative to the entire graph node. The default parameters will use **weibo dataset, IC diffusion model and 0.01 seed rate** to build a trainable sub-graph.
 
-Line **129** code  `adj = get_top_nodes_and_edge(adj, 50000)`  in `diffusion_for_train_weibo.py` decides the size of  the sampled graph.  `50000`means the code will sample a graph containing 50000 nodes and corresponding edges.
+Line **129** code  `adj = get_top_nodes_and_edge(adj, 50000)`  in `diffusion_for_train_V3_weibo.py` decides the size of  the sampled graph.  `50000`means the code will sample a graph containing 50000 nodes and corresponding edges.
 
-The final product of `diffusion_for_train_weibo.py` is a trainable graph dataset file named `*.SG.new`, the final product called `weibo_mean_IC10.SG.new` if you haven't change any parameters.
+The final product of `diffusion_for_train_v3_weibo.py` is a trainable graph dataset file named `*.SG.new`, the final product called `weibo_mean_IC10.SG.new` if you haven't change any parameters.
 
 ### Step 3
 

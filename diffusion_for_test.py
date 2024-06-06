@@ -27,6 +27,7 @@ from torch.optim import Adam, SGD
 from torch.utils.data.dataset import Dataset
 from torch.autograd import Variable
 
+torch.cuda.set_device(0)
 print('Is GPU available? {}\n'.format(torch.cuda.is_available()))
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 CUDA_LAUNCH_BLOCKING=1
