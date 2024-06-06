@@ -44,7 +44,7 @@ parser.add_argument("-sp", "--seed_rate", default=1, type=int,
 mode = ['Normal', 'Budget Constraint']
 parser.add_argument("-m", "--mode", default="normal", type=str,
                     help="one of: {}".format(", ".join(sorted(mode))))
-args = parser.parse_args(args=[])
+args = parser.parse_args()
 
 def normalize_adj(mx):
     """Row-normalize sparse matrix"""
